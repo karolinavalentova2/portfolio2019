@@ -31,6 +31,7 @@ function doStartAbout() {
 
 function changeImgPortfolio(button) {
     let portfolioImg = document.getElementById('portfolioImg');
+    const portfolioImgLink = document.getElementById('portfolioImgLink');
 
     portfolioButtons[lastActivePortfolioButton].classList.toggle('btn-active');
     button.classList.toggle('btn-active');
@@ -38,16 +39,19 @@ function changeImgPortfolio(button) {
     switch (button.id) {
         case 'btnAnimation':{
             portfolioImg.style.backgroundImage = "url('images/portfolio1.png')";
+            portfolioImgLink.href = 'http://karolinavalentova.me/animation/';
             lastActivePortfolioButton = 0;
             break;
         }
         case 'btnBrand':{
             portfolioImg.style.backgroundImage = "url('images/portfolio2.png')";
+            portfolioImgLink.href = '';
             lastActivePortfolioButton = 1;
             break;
         }
         case 'btnUx':{
             portfolioImg.style.backgroundImage = "url('images/portfolio3.png')";
+            portfolioImgLink.href = 'http://karolinavalentova.me/hogwarts/';
             lastActivePortfolioButton = 2;
             break;
         }

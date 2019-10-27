@@ -76,6 +76,10 @@ function doSetStyleOnPages() {
     if(style) {
         document.body.classList.toggle('default');
         document.body.classList.add(style);
+    } else {
+        if(!document.body.classList.contains('default')) {
+            document.body.classList.add('default');
+        }
     }
 }
 

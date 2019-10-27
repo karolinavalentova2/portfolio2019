@@ -86,7 +86,9 @@ function doSetStyleOnPages() {
 function doSaveSelectedTheme() {
     let style;
     const bodyClasses = document.body.classList;
-    if(bodyClasses.contains('yellow')) style = 'yellow';
+    if(bodyClasses.contains('yellow')) {
+        style = 'yellow';
+        localStorage.setItem('STYLE', style);
+    }
 
-    localStorage.setItem('STYLE', style);
 }

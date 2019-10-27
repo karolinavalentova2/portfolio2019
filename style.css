@@ -1,0 +1,429 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    color: var(--text-color);
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 400;
+}
+
+h2 {font-size: 4rem;}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 300;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+h5:hover {color: var(--text-color-hover);}
+
+p {
+    font-size: 1.5rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+/* ------------------------ CSS variables start */
+
+.default {
+    --bg-img: url("images/bg_blue_big.png");
+    --bg-color: #3C139D;
+    --text-color: #F4D300;
+    --text-color-hover: #FFB300;
+    --secondary-color: #270982;
+    --bg-footer: url('images/bg_blue_footer.png');
+    --skill-bar: #F4D300;
+}
+
+.yellow {
+    --bg-img: url("images/bg_yellow_big.png");
+    --bg-color: #ffe60d;
+    --text-color: #4109AD;
+    --text-color-hover: blue;
+    --secondary-color: #270982;
+    --bg-footer: url('images/bg_yellow_footer.png');
+    --skill-bar: #F4D300;
+}
+
+/* ------------------------ CSS variables end */
+
+
+.bg-index {
+    background-image: var(--bg-img);
+    height: 100%;
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    overflow: hidden;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "logo nav .";
+    margin: 1rem auto;
+    width: 96vw;
+}
+
+.initials {
+    position: absolute;
+    font-size: 1.7rem;
+    text-align: center;
+    z-index: -1;
+    width: 4rem;
+}
+
+.logo {
+    grid-area: logo;
+    align-self: center;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    background-color: #FFDD00;
+    border-radius: 50%;
+}
+
+.logo-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: url('images/logo.png');
+    background-size: cover;
+    display: block;
+    background-position-y: 0;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+
+.logo-img:hover {
+    background-position-y: 60px;
+}
+
+.nav-menu {
+    grid-area: nav;
+    justify-content: center;
+    display: flex;
+}
+
+.nav-menu > a {
+    margin: 0 2rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.menu-btn {
+    border-bottom: 1px solid white;
+    width: 5.5rem;
+    text-align: center;
+}
+.menu-btn:hover {
+    color: var(--text-color-hover);
+}
+
+.praying-container {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-areas:
+            ". svg ."
+            ". god ."
+            ". god .";
+    z-index: 1;
+}
+
+.circle {
+    grid-area: svg;
+    align-self: end;
+    justify-self: center;
+    animation: glow 500ms linear 0s infinite alternate;
+    cursor: pointer
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 1vw rgba(244, 211, 0, 1));
+        margin-top: 20%;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 3.25vw rgba(244, 211, 0, 1)) drop-shadow(0 0 3.25vw rgba(0, 0, 255, 1));
+        margin-top: 18%;
+    }
+
+}
+
+.praying {
+    grid-area: god;
+    justify-self: center;
+    cursor: pointer
+}
+
+.heading-index {
+    bottom: 4rem;
+    left: 5%;
+    position: absolute;
+}
+
+.aside-index {
+    width: 4rem;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.icons {
+    margin: 0.5rem 0;
+    width: 3rem;
+    cursor: pointer;
+}
+
+.icons:hover {width: 3.7rem}
+
+/* ---------------- Home page end */
+
+/* ---------------- About page start */
+.bg-big {
+    background-image: var(--bg-img);
+    height: 100%;
+    background-color: var(--bg-color);
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+}
+
+.animation-sick {
+    position: absolute;
+    left: 50%;
+    top: 4rem;
+}
+
+.sick {
+    width: 195px;
+    height: 418px;
+    float: right;
+    margin-right: 549px;
+    margin-top: 200px;
+    background-image: url(images/sprite_sick.png);
+
+    animation: sick 1s steps(5) infinite;
+}
+
+@keyframes sick {
+    100% {
+        background-position: -979px;
+
+    }
+}
+
+.main-headline-about {
+    width: 38rem;
+    margin-left: 7rem;
+    margin-top: 24rem;
+}
+
+.nav-down {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.arrow-down {
+    margin-top: 1rem;
+    animation: floating 3s infinite ease-in-out;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 20px); }
+    to   { transform: translate(0, -0px); }
+}
+
+.content-about {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 13rem;
+}
+
+section {width: 29rem;}
+
+.skills-container > p {
+    text-align: right;
+    margin-block-end: 0;
+}
+
+.bar {
+    width: 100%;
+    height: 2rem;
+    background: var(--secondary-color);
+    display: flex;
+    align-items: center;
+}
+
+.skill {
+    background: var(--skill-bar);
+    height: 1rem;
+    display: block;
+    margin: 0 0.5rem;
+    border-radius: 7px;
+}
+
+.illustr {width: 85%;}
+.xd {width: 75%}
+.photoshop {width: 35%}
+.inDesign {width: 50%}
+
+.html {width: 85%}
+.css {width: 60%}
+.js {width: 30%}
+
+.footer-img {
+    width: 100%;
+    height: 23rem;
+    background-image: var(--bg-footer);
+}
+
+.footer-headline {
+    width: 100%;
+    text-align: center;
+    padding-top: 20rem;
+}
+
+.footer-headline > p {font-size: 1.3rem}
+
+/* ---------------- About page end */
+
+/* ---------------- Work page start */
+.main-headline-work {
+    width: 41rem;
+    margin-left: 7rem;
+    margin-top: 36rem;
+}
+
+.main-headline-work > p {text-align: end}
+
+.portfolio-container-work {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 15rem 0 2rem 0;
+}
+
+.portfolio-navigation {
+    padding-right: 3rem;
+}
+
+.align-right {
+    text-align: right;
+    margin-right: 12rem;
+}
+
+.portfolio-headline {
+    position: absolute;
+    right: 0;
+    margin-top: 3rem;
+}
+
+#portfolioImg {
+    background-image: url("images/portfolio1.png");
+    width: 771px;
+    height: 381px;
+}
+
+.btn-active {color: var(--text-color)!important;}
+
+.animation-run {
+    position: absolute;
+    top: 3rem;
+}
+
+.run {
+    background-image: url("images/run.png");
+    width: 317px;
+    height: 608px;
+    margin-left: 65%;
+    position: relative;
+    animation: run 1.4s steps(9) infinite;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+@keyframes run {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        background-position: 2853px;
+        top: 10rem;
+        left: 40rem;
+    }
+}
+
+/* ---------------- Work page end */
+
+/* ---------------- Media queries start */
+@media (max-width: 320px) {
+    .logo-size {width: 2rem;}
+    .nav-menu > a {margin: 0 0.5rem;}
+    .nav-menu > a > p {font-size: 1rem;}
+    .menu-btn {width: 3.5rem;}
+
+    .praying-container {top: 2rem;}
+    .circle {width: 2rem;}
+    .praying-container > img {width: 15rem;}
+
+    .aside-index {
+        width: 100vw;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        top: auto;
+        transform: none;
+    }
+    .aside-index > a {margin: 0 0.5rem;}
+
+    .icons {
+        margin: 0.5rem 0;
+        width: 1.5rem;
+    }
+
+    .heading-index {
+        bottom: 3rem;
+        width: 88vw;
+    }
+    .heading-index > h1 {font-size: 3rem;}
+    .heading-index > h3 {font-size: 1rem;}
+}

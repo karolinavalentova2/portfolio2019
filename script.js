@@ -89,6 +89,8 @@ function doSaveSelectedTheme() {
     if(bodyClasses.contains('yellow')) {
         style = 'yellow';
         localStorage.setItem('STYLE', style);
+    } else {
+        localStorage.clear();
     }
 
 }

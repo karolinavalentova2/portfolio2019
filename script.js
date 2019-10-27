@@ -65,6 +65,7 @@ function doChangeStyle() {
     if(bodyClasses.contains('default')) {
         document.body.classList.toggle('yellow');
     } else if(bodyClasses.contains('yellow')) {
+        localStorage.clear();
         document.body.classList.toggle('default');
     }
 
@@ -77,6 +78,7 @@ function doSetStyleOnPages() {
         document.body.classList.toggle('default');
         document.body.classList.add(style);
     } else {
+
         if(!document.body.classList.contains('default')) {
             document.body.classList.add('default');
         }
@@ -89,8 +91,6 @@ function doSaveSelectedTheme() {
     if(bodyClasses.contains('yellow')) {
         style = 'yellow';
         localStorage.setItem('STYLE', style);
-    } else {
-        localStorage.clear();
     }
 
 }
